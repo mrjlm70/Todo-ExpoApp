@@ -18,9 +18,10 @@ header:{
     backgroundColor:'skyblue',
 },
 title:{
+    fontFamily: 'yekan',
     textAlign:'center',
     color:'white',
     fontSize:25,
-    fontWeight:'bold',
+    // fontWeight:'bold',
 }
  })

@@ -10,13 +10,21 @@ import React, { useState } from "react";
 import Header from "./components/Header";
 import Persons from "./components/Persons";
 import AddPerson from "./components/AddPerson";
+import AppLoading from 'expo-app-loading';
+import * as Font from 'expo-font';
+
+const getFonts = ()=>{
+  return Font.loadAsync({
+    yekan:require('./assets/fonts/Yekan.ttf'),
+  })
+};
 
 export default function App() {
-  const [persons, setPersons] = useState([
-   
-  ]);
+  const [persons, setPersons] = useState([]);
 
   const [person, setPerson] = useState("");
+
+  const[FontLoading,setFontLoading]=useState(false);
 
   const pressHandler = (key) => {
     setPersons((prevPersons) => prevPersons.filter((p) => p.key != key));
@@ -49,6 +57,7 @@ export default function App() {
     }
   };
 
+if(FontLoading){
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
@@ -72,7 +81,16 @@ export default function App() {
         </View>
       </View>
     </TouchableWithoutFeedback>
-  );
+  );}
+  else{
+    return(
+      <AppLoading 
+      startAsync={getFonts}
+      onFinish={()=>setFontLoading(true)}
+      onError={console.warn}
+      />
+    )
+  }
 }
 
 const styles = StyleSheet.create({

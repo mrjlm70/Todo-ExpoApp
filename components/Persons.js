@@ -35,8 +35,9 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   personName: {
+    fontFamily: 'yekan',
     textAlign: "center",
     fontSize: 17,
-    fontWeight: "bold",
+    // fontWeight: "bold",
   },
 });
