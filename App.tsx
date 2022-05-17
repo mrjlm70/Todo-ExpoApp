@@ -2,7 +2,6 @@ import {
   Alert,
   FlatList,
   Keyboard,
-  StyleSheet,
   TouchableWithoutFeedback,
   View,
 } from "react-native";
@@ -12,6 +11,7 @@ import Persons from "./components/Persons";
 import AddPerson from "./components/AddPerson";
 import AppLoading from 'expo-app-loading';
 import * as Font from 'expo-font';
+import { styles } from "./components/styles/globalStyle";
 
 const getFonts = ()=>{
   return Font.loadAsync({
@@ -92,19 +92,3 @@ if(FontLoading){
     )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#e2e2e2",
-  },
-  body: {
-    flex: 1,
-    padding: 40,
-  },
-  items: {
-    flex: 1,
-    marginTop: 20,
-    // backgroundColor:'red',
-  },
-});
